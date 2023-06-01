@@ -28,7 +28,7 @@ In Unity viene assegnata questa forza ai corpi rigidi e sarà poi compito del mo
 ![prova2](https://www.dl.dropboxusercontent.com/s/n3ktsmyyazexm2h/f2.jpg?dl=1)
 
 
-[![Watch the video](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.dl.dropboxusercontent.com/s/tbsu4gn1d56g75q/20230519131325.mp4?dl=0 "Prova video")
+[![Il mio video](https://dl.img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)](https://www.dl.dropboxusercontent.com/s/tbsu4gn1d56g75q/20230519131325.mp4?dl=0 "Prova video")
 
 
 
