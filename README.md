@@ -20,10 +20,7 @@ In questa simulazione vengono usate solo due equazioni della meccanica classica.
 La prima è la **legge di gravitazione universale di Newton**:
 
 ![prova](https://www.dropbox.com/s/hpzy51cnavziyld/f1.jpg?dl=1)
-
-p align="center"
-  img src=https://www.dropbox.com/s/hpzy51cnavziyld/f1.jpg?dl=1"
-/p
+![prova](https://www.dropboxusercontent.com/s/hpzy51cnavziyld/f1.jpg?dl=1)
 
 
 Questa legge afferma che la forza gravitazionale **F** generata tra due corpi nello spazio è direttamente proporzionale al prodotto delle masse dei corpi e inversamente proporzionale al quadrato della distanza tra i centri di massa dei corpi. **G** è la costante di gravitazione universale e vale 6.674×10−11 N m^2 kg^−2 ma per esigenze di simulazione viene portata qui a circa **100** N m^2 kg^−2, **m1** e **m2** sono le masse dei corpi e **d^2** è la distanza al quadrato tra i corpi.
