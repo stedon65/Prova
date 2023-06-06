@@ -56,8 +56,6 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - Le distanze in metri sono moltiplicate per un fattore $10^{-7}$
 - Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
 - La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
-
-
 ![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
 
 
