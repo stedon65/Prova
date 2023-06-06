@@ -14,9 +14,9 @@ La prima è la **legge di gravitazione universale di Newton**
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1) 
 
-'''math
+```math
 v
-'''
+```
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
