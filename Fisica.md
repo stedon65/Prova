@@ -35,6 +35,8 @@ In un'orbita ellittica l'accelerazione gravitazionale varia continuamente in mod
 
 Quindi per poter simulare in grafica 3D il moto orbitale planetario usando il motore di fisica di Unity è necessario rispettare le seguenti condizioni:
 
+![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
+
 - I rapporti tra le masse dei corpi.
 - I rapporti tra le distanze dei corpi.
 
