@@ -32,7 +32,7 @@ $$v=\sqrt{\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)}$$
 
 In questa equazione $$v$$ è la velocità istantanea del corpo nella sua orbita, $$\mu$$ la costante di gravitazione planetaria che può semplificarsi in $$GM$$ nel caso un corpo abbia una massa molto più grande dell'altro (es. Sole-Terra), $$r$$ è la distanza del corpo da uno dei fuochi occupati (in questo esempio dal Sole) e $$a$$ è il semiasse maggiore dell'ellisse.
 
-La prima legge di Keplero afferma che _ogni pianeta si muove su orbite ellittiche ed il sole occupa uno dei fuochi dell'ellisse_. Il punto sulla traiettoria della Terra più lontano dal sole si chiama **Afelio** mentre il più vicino si chiama **Perielio**. la media tra Afelio e Perielio definisce il semiasse maggiore dell'ellisse. Le orbite ellittiche dei pianeti hanno una eccentricità molto bassa, quello della terra è $$0.017$$ e quindi il semiasse maggiore dell'ellisse è quasi uguale al raggio di un cerchio con il Sole al centro. In questo senso le orbite ellittiche dei pianeti possono essere approssimate a orbite circolari. Anche la Luna si muove su un'orbita ellittica rispetto alla Terra con il punto più lontano che si chiama **Apogeo** mentre quello più vicino **Perigeo**.
+
 
 
 
