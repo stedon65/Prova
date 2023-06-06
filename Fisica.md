@@ -11,7 +11,7 @@ In questa simulazione vengono usate solo due equazioni della meccanica classica.
 
 La prima è la **legge di gravitazione universale di Newton**
 
-$$v$$<br />
+$$'v'$$
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1) 
   
@@ -20,5 +20,5 @@ $$v$$
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
 
-![logo](https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png "Raspberry pi")
+
 
