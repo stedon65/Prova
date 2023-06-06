@@ -21,13 +21,5 @@ $$a=G\dfrac{m_2}{d^2}=\dfrac{F_G}{m_1}$$
 
 La seconda equazione permette di calcolare la **velocità orbitale istantanea** di un corpo durante la sua **orbita kepleriana ellittica**. In questa simulazione si usano orbite ellittiche per le traiettorie dei pianeti intorno al Sole.
 
-$$v^2=\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)$$
-
-In questa equazione $$\mu$$ è la **costante di gravitazione planetaria** la quale, quando un corpo è molto più grande dell'altro, vale:
-$$\mu=GM$$
-
-
-
-
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
