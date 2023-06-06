@@ -2,7 +2,9 @@
 
 
 ### Architettura
+
 ![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
+
 Uno dei principi più importanti di Object-Oriented Design afferma che è meglio _favorire la composizione rispetto all’ereditarietà_. Questa affermazione ha come focus primario la manutenibilità del software e implicitamente si riferisce ad un altro importante principio che esorta a _programmare verso le interfacce e non verso l’implementazione_. Se l’obiettivo come sviluppatori è quello di raggiungere un alto disaccoppiamento ed un'alta riusabilità del codice l’applicazione di questi due principi ci conduce sulla retta via.
 
 Unity architetturalmente abbraccia questa filosofia alla radice implementando una **architettura a componenti**.
