@@ -13,10 +13,12 @@ Tra i componenti nativi che interessano maggiormenete questa simulazione sicuram
 
 ### Fisica
 Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando solo il motore del modulo _built-in_ di fisica di Unity. Non viene eseguito nessun calcolo della traiettoria orbitale ma la traiettoria è il risultato dell'applicazione di forze e velocità ai corpi rigidi considerati. Si considera solo il moto di rivoluzione e non quello di rotazione.
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
+
 In questa simulazione vengono usate solo due equazioni della meccanica classica.
 
 La prima è la **legge di gravitazione universale di Newton**:
+
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 
 $$F_G=G\dfrac{m_1m_2}{d^2}=m_1a$$
 
