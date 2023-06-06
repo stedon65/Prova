@@ -26,7 +26,7 @@ $$v^2=\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)$$
 In questa equazione $$\mu$$ è la **costante di gravitazione planetaria** la quale, quando un corpo è molto più grande dell'altro, vale:
 $$\mu=GM$$
 
-Quindi, per determinare la velocità istantanea abbiamo:
+
 
 
 
