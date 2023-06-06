@@ -37,20 +37,7 @@ Quindi per poter simulare in grafica 3D il moto orbitale planetario usando il mo
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
-- I rapporti tra le masse dei corpi.
-- I rapporti tra le distanze dei corpi.
 
-In questa simulazione, quindi, ipotizzo quanto segue:
-
-- La costante $$G$$ è aumentata per permettere una simulazione rapida.
-- La massa della Luna vale $$1.0$$.
-- La massa di Mercurio è $$4.5$$ volte la massa lunare.
-- La massa di Venere è $$66.2$$ volte la massa lunare.
-- La massa della Terra è $$81.3$$ volte la massa lunare.
-- La massa del Sole è $$27069000.0$$ volte la massa lunare.
-- Le distanze in metri sono moltiplicate per un fattore $$10^{-7}$$
-- Il Sole ha $$v = 0$$ e non risente della forza gravitazionale da Terra e Luna.
-- La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
 
 
