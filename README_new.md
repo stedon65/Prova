@@ -57,6 +57,7 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
 - La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
+![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
 ### prova
 
 gdfggfgfgsfgdfg
@@ -71,7 +72,7 @@ sdggdsdgsgsgsdg
 sdgsddsgsdgdfddg
 gdgfdgfdgdfgdfgfdgfgfd
 parole
-![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
+
 
 
 
