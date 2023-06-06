@@ -1,10 +1,6 @@
 # Moto orbitale in Unity
 
-
 ### Architettura
-
-![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
-
 Uno dei principi più importanti di Object-Oriented Design afferma che è meglio _favorire la composizione rispetto all’ereditarietà_. Questa affermazione ha come focus primario la manutenibilità del software e implicitamente si riferisce ad un altro importante principio che esorta a _programmare verso le interfacce e non verso l’implementazione_. Se l’obiettivo come sviluppatori è quello di raggiungere un alto disaccoppiamento ed un'alta riusabilità del codice l’applicazione di questi due principi ci conduce sulla retta via.
 
 Unity architetturalmente abbraccia questa filosofia alla radice implementando una **architettura a componenti**.
@@ -16,6 +12,7 @@ In Unity i componenti gestiti dal motore interno devono derivare da una classe b
 Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate()** che permette di avere un _refresh rate_ della fisica disaccoppiato dal _frame rate_ grafico.
 
 ### Fisica
+![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
 Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando solo il motore del modulo _built-in_ di fisica di Unity. Non viene eseguito nessun calcolo della traiettoria orbitale ma la traiettoria è il risultato dell'applicazione di forze e velocità ai corpi rigidi considerati. Si considera solo il moto di rivoluzione e non quello di rotazione.
 
 In questa simulazione vengono usate solo due equazioni della meccanica classica.
