@@ -1,6 +1,6 @@
 # Moto orbitale in Unity
 
-
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 ### Architettura
 Uno dei principi più importanti di Object-Oriented Design afferma che è meglio _favorire la composizione rispetto all’ereditarietà_. Questa affermazione ha come focus primario la manutenibilità del software e implicitamente si riferisce ad un altro importante principio che esorta a _programmare verso le interfacce e non verso l’implementazione_. Se l’obiettivo come sviluppatori è quello di raggiungere un alto disaccoppiamento ed un'alta riusabilità del codice l’applicazione di questi due principi ci conduce sulla retta via.
 
@@ -66,7 +66,7 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
 - La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
+
 
 
 
