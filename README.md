@@ -26,18 +26,19 @@ Questa legge afferma che la forza gravitazionale $F_G$ generata tra due corpi ne
 
 In Unity viene assegnata questa forza ai corpi rigidi e sarà poi compito del modulo di fisica calcolare l'accelerazione gravitazionale per ogni corpo come segue:
 
-$$a=G\dfrac{m_2}{d^2}=\dfrac{F_G}{m_1}$$
+# $$a=G\dfrac{m_2}{d^2}=\dfrac{F_G}{m_1}$$
 
 La seconda equazione permette di calcolare la **velocità orbitale istantanea** di un corpo durante la sua **orbita kepleriana ellittica**. In questa simulazione si usano orbite ellittiche per le traiettorie dei pianeti intorno al Sole.
 
-$$v^2=\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)$$
+# $$v^2=\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)$$
 
 In questa equazione $\mu$ è la **costante di gravitazione planetaria** la quale, quando un corpo è molto più grande dell'altro, vale:
-$\mu=GM$
+
+# $\mu=GM$
 
 Quindi, per determinare la velocità istantanea abbiamo:
 
-$$v=\sqrt{\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)}$$
+# $$v=\sqrt{\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)}$$
 
 In questa equazione $v$ è la velocità istantanea del corpo nella sua orbita, $\mu$ la costante di gravitazione planetaria che può semplificarsi in $GM$ nel caso un corpo abbia una massa molto più grande dell'altro (es. Sole-Terra), $r$ è la distanza del corpo da uno dei fuochi occupati (in questo esempio dal Sole) e $a$ è il semiasse maggiore dell'ellisse.
 
@@ -45,7 +46,7 @@ La prima legge di Keplero afferma che _ogni pianeta si muove su orbite ellittich
 
 In un'orbita circolare la velocità tangenziale alla traiettoria è costante in modulo mentre l'accelerazione gravitazionale varia continuamente in direzione ma non influenza la velocità del corpo essendo normale alla velocità. **È proprio una ben precisa velocità tangenziale a mantenere il corpo in un'orbita circolare**. L'equazione della velocità orbitale istantanea può quindi essere semplificata per orbite circolari, in cui il semiasse maggiore è uguale alla distanza tra i corpi, come segue:
 
-$$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{\dfrac{\mu}{a}}$$
+# $$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{\dfrac{\mu}{a}}$$
 
 In un'orbita ellittica l'accelerazione gravitazionale varia continuamente in modulo e direzione modificando la velocità tangenziale in modulo e direzione.
 
