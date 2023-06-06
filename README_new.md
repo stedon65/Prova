@@ -77,3 +77,24 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
