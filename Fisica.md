@@ -30,11 +30,6 @@ Quindi, per determinare la velocità istantanea abbiamo:
 
 $$v=\sqrt{\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)}$$
 
-In questa equazione $$v$$ è la velocità istantanea del corpo nella sua orbita, $$\mu$$ la costante di gravitazione planetaria che può semplificarsi in $$GM$$ nel caso un corpo abbia una massa molto più grande dell'altro (es. Sole-Terra), $$r$$ è la distanza del corpo da uno dei fuochi occupati (in questo esempio dal Sole) e $$a$$ è il semiasse maggiore dell'ellisse.
-
-
-
-
 
 
 
