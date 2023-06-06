@@ -19,6 +19,6 @@ $$v$$
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
-<p align="center">
+
 ![logo](https://www.raspberrypi.org/app/uploads/2018/03/RPi-Logo-Reg-SCREEN-199x250.png "Raspberry pi")
-</p>
+
