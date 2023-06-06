@@ -62,6 +62,7 @@ La massa della Terra è $81.3$ volte la massa lunare.
 La massa del Sole è $27069000.0$ volte la massa lunare.
 Le distanze in metri sono moltiplicate per un fattore $10^{-7}$
 Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
 
@@ -78,7 +79,7 @@ La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apo
 
 
 
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
+
 
 
 
