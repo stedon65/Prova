@@ -12,5 +12,6 @@ In questa simulazione vengono usate solo due equazioni della meccanica classica.
 La prima è la **legge di gravitazione universale di Newton**
   
 $$v$$
-  
-    ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
+$$
+
+![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
