@@ -11,6 +11,8 @@ In Unity i componenti gestiti dal motore interno devono derivare da una classe b
 
 Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate()** che permette di avere un _refresh rate_ della fisica disaccoppiato dal _frame rate_ grafico.
 
+![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
+
 ### Fisica
 Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando solo il motore del modulo _built-in_ di fisica di Unity. Non viene eseguito nessun calcolo della traiettoria orbitale ma la traiettoria è il risultato dell'applicazione di forze e velocità ai corpi rigidi considerati. Si considera solo il moto di rivoluzione e non quello di rotazione.
 
@@ -41,8 +43,6 @@ $$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{
 In un'orbita ellittica l'accelerazione gravitazionale varia continuamente in modulo e direzione modificando la velocità tangenziale in modulo e direzione.
 
 Quindi per poter simulare in grafica 3D il moto orbitale planetario usando il motore di fisica di Unity è necessario rispettare le seguenti condizioni:
-
-![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
 
 - I rapporti tra le masse dei corpi.
 - I rapporti tra le distanze dei corpi.
