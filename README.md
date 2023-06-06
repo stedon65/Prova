@@ -18,7 +18,7 @@ In questa simulazione vengono usate solo due equazioni della meccanica classica.
 
 La prima è la **legge di gravitazione universale di Newton**:
 
-# $$F_G=G\dfrac{m_1m_2}{d^2}=m_1a$$ 
+# $F_G=G\dfrac{m_1m_2}{d^2}=m_1a$ 
 
 ![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 
