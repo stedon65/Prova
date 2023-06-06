@@ -1,5 +1,5 @@
 # Moto orbitale in Unity
-
+![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
 
 ### Fisica
 Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando solo il motore del modulo _built-in_ di fisica di Unity. Non viene eseguito nessun calcolo della traiettoria orbitale ma la traiettoria è il risultato dell'applicazione di forze e velocità ai corpi rigidi considerati. Si considera solo il moto di rivoluzione e non quello di rotazione.
@@ -48,7 +48,7 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
 
-![](https://www.dl.dropboxusercontent.com/s/qjwg36nxa2ra0e1/01.jpg?dl=1)
+
 
 
 
