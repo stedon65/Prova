@@ -14,10 +14,10 @@ La prima è la **legge di gravitazione universale di Newton**
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1) 
   
-
+$$v$$
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
-![formula](https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1)
+
 
 
