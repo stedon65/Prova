@@ -28,11 +28,6 @@ $$\mu=GM$$
 
 Quindi, per determinare la velocità istantanea abbiamo:
 
-$$v=\sqrt{\mu\left(\dfrac{2}{r}-\dfrac{1}{a}\right)}$$
-
-
-
-
 
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
