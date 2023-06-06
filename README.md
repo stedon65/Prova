@@ -60,7 +60,7 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 
 
 
-![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=0)
+![](https://dl.dropbox.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
 
 
