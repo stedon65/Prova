@@ -18,8 +18,6 @@ In questa simulazione vengono usate solo due equazioni della meccanica classica.
 
 La prima è la **legge di gravitazione universale di Newton**:
 
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
-
 $$F_G=G\dfrac{m_1m_2}{d^2}=m_1a$$
 
 Questa legge afferma che la forza gravitazionale $F_G$ generata tra due corpi nello spazio è direttamente proporzionale al prodotto delle masse dei corpi e inversamente proporzionale al quadrato della distanza tra i centri di massa dei corpi. $G$ è la costante di gravitazione universale e vale $6.674\times10^{-11}Nm^2 kg^{-2}$ ma per esigenze di simulazione viene qui aumentata, $m_1$ e $m_2$ sono le masse dei corpi e $d^2$ è la distanza al quadrato tra i corpi.
@@ -67,7 +65,7 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
 - La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
-
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 
 
 
