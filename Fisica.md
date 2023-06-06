@@ -36,7 +36,6 @@ La prima legge di Keplero afferma che _ogni pianeta si muove su orbite ellittich
 
 In un'orbita circolare la velocità tangenziale alla traiettoria è costante in modulo mentre l'accelerazione gravitazionale varia continuamente in direzione ma non influenza la velocità del corpo essendo normale alla velocità. **È proprio una ben precisa velocità tangenziale a mantenere il corpo in un'orbita circolare**. L'equazione della velocità orbitale istantanea può quindi essere semplificata per orbite circolari, in cui il semiasse maggiore è uguale alla distanza tra i corpi, come segue:
 
-$$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{\dfrac{\mu}{a}}$$
 
 
 
