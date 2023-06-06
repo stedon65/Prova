@@ -46,7 +46,7 @@ In un'orbita circolare la velocità tangenziale alla traiettoria è costante in 
 $$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{\dfrac{\mu}{a}}$$
 
 In un'orbita ellittica l'accelerazione gravitazionale varia continuamente in modulo e direzione modificando la velocità tangenziale in modulo e direzione.
-
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 Quindi per poter simulare in grafica 3D il moto orbitale planetario usando il motore di fisica di Unity è necessario rispettare le seguenti condizioni:
 
 I rapporti tra le masse dei corpi.
@@ -62,7 +62,6 @@ La massa della Terra è $81.3$ volte la massa lunare.
 La massa del Sole è $27069000.0$ volte la massa lunare.
 Le distanze in metri sono moltiplicate per un fattore $10^{-7}$
 Il Sole ha $v = 0$ e non risente della forza gravitazionale da Terra e Luna.
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 La Terra e la Luna hanno velocità iniziale rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
 
