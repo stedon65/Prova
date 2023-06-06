@@ -16,6 +16,8 @@ Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando 
 
 In questa simulazione vengono usate solo due equazioni della meccanica classica.
 
+![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
+
 La prima è la **legge di gravitazione universale di Newton**:
 
 $$F_G=G\dfrac{m_1m_2}{d^2}=m_1a$$
@@ -46,8 +48,6 @@ In un'orbita circolare la velocità tangenziale alla traiettoria è costante in 
 $$a=r\to\dfrac{2}{r}-\dfrac{1}{r}=\dfrac{1}{r}\to v=\sqrt{\dfrac{\mu}{r}}=\sqrt{\dfrac{\mu}{a}}$$
 
 In un'orbita ellittica l'accelerazione gravitazionale varia continuamente in modulo e direzione modificando la velocità tangenziale in modulo e direzione.
-
-![](https://www.dl.dropboxusercontent.com/s/n18qw48rk2tvbq8/diagram.jpg?dl=1)
 
 Quindi per poter simulare in grafica 3D il moto orbitale planetario usando il motore di fisica di Unity è necessario rispettare le seguenti condizioni:
 
