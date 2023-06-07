@@ -160,7 +160,9 @@ Successivamente viene chiamato il metodo **AddTrail** che aggiunge il componente
 
 Il metodo **PositionRelativeTo** permette al client dell'oggetto di posizionare l'oggetto grafico **spatialObject** rispetto ad un altro oggetto di riferimento _parent_ tramite il suo componente **Transform objectTransform**. L'oggetto **spatialObject**, quindi, avrà il proprio sistema di riferimento posizionato in coordinate locali rispetto al sistema di riferimento dell'oggetto **objectTranform**. In questo modo, ad esempio, sarà facile posizionare la Luna conoscendo la distanza dalla Terra tramite un vettore **localPosition**.
 
+Il metodo **ApplyGravityForceRelativeTo** permette al client dell'oggetto di aggiungere una forza al corpo rigido **rigidBody** dell'oggetto grafico. La forza viene calcolata tramite l'equazione di gravitazione universale di Newton.
 
+Il metodo **ApplyStartingVelocityRelativeTo** permette al client dell'oggetto di aggiungere una velocità iniziale al corpo rigido **rigidBody** dell'oggetto grafico. Al suo interno viene chiamata la **ApplyStartingVelocity** su un oggetto iniettato nel costruttore sull'interfaccia **IStartingVelocity**. L'interfaccia permette di usare **strategie diverse** per calcolare la velocità iniziale. **Sebbene la stessa formula possa essere usata sia per la velocità orbitale circolare che ellittica (quando il semiasse maggiore e la distanza sono uguali) ho preferito usare due formule diverse di cui una semplificata**.
 
 
 
