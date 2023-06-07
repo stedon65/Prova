@@ -31,7 +31,7 @@ public class CircularOrbitSimulation : MonoBehaviour
         InitDomain();
 
         GameObject camera2 = GameObject.Find("Camera 2");
-        camera2.transform.SetParent(earth.SpatialObject.transform);
+        earth.SetAsParentOf(camera2);
         camera2.transform.localRotation = Quaternion.Euler(90.0f, 90.0f, 0.0f);
         camera2.transform.localPosition = new Vector3(0.0f, 10.0f, 0.0f);
         camera2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -40,14 +40,13 @@ public class CircularOrbitSimulation : MonoBehaviour
         directionalLight1 = GameObject.Find("Light 1");
 
         Material sunMaterial = Resources.Load<Material>("Materials/SunMaterial");
-        sun.SpatialObject.GetComponent<MeshRenderer>().material = sunMaterial;
+        sun.Material = sunMaterial;
 
         Material earthMaterial = Resources.Load<Material>("Materials/EarthMaterial");
-        earth.SpatialObject.GetComponent<MeshRenderer>().material = earthMaterial;
+        earth.Material = earthMaterial;
 
         Material moonMaterial = Resources.Load<Material>("Materials/MoonMaterial");
-        moon.SpatialObject.GetComponent<MeshRenderer>().material = moonMaterial;
-
+        moon.Material = moonMaterial;
     }
 
     private void InitDomain()
@@ -82,12 +81,12 @@ public class CircularOrbitSimulation : MonoBehaviour
         earth.Name = "Earth";
         earth.Mass = earthMass;
         earth.Radius = earthRadius * entityRadiusFactor;
-        earth.PositionRelativeTo(sun.SpatialObject.transform, (new Vector3(earthSunAverageDistance, 0.0f, 0.0f) / entityPositionFactor));
+        earth.PositionRelativeTo(sun, (new Vector3(earthSunAverageDistance, 0.0f, 0.0f) / entityPositionFactor));
 
         moon.Name = "Moon";
         moon.Mass = moonMass;
         moon.Radius = moonRadius * entityRadiusFactor;
-        moon.PositionRelativeTo(earth.SpatialObject.transform, (new Vector3(moonEarthAverageDistance, 0.0f, 0.0f) / entityPositionFactor));
+        moon.PositionRelativeTo(earth, (new Vector3(moonEarthAverageDistance, 0.0f, 0.0f) / entityPositionFactor));
 
         float moonEarthSemimajorAxis = moonEarthAverageDistance / entityPositionFactor;
         float moonSunSemimajorAxis = (earthSunAverageDistance + moonEarthAverageDistance) / entityPositionFactor;
@@ -102,22 +101,19 @@ public class CircularOrbitSimulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera3.transform.LookAt(earth.SpatialObject.transform);
-        directionalLight1.transform.LookAt(earth.SpatialObject.transform);
+        earth.SetLookAtMe(camera3);
+        earth.SetLookAtMe(directionalLight1);
 
         if (enableTrail)
         {
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
+            earth.EnableTrail();
+            moon.EnableTrail();
         }
         else
         {
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            earth.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            moon.SpatialObject.GetComponent<TrailRenderer>().Clear();
+            earth.DisableTrail();
+            moon.DisableTrail();     
         }
-
     }
 
     void FixedUpdate()
@@ -132,7 +128,7 @@ public class CircularOrbitSimulation : MonoBehaviour
         {
             foreach (SpatialEntity celestialBodyB in bodies)
             {
-                if (!celestialBodyA.Equals(celestialBodyB) && !(celestialBodyA.SpatialObject.name == "Sun"))
+                if (!celestialBodyA.Equals(celestialBodyB) && !(celestialBodyA.Name == "Sun"))
                 {
                     celestialBodyA.ApplyGravityForceRelativeTo(celestialBodyB);
                 }

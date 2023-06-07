@@ -37,7 +37,7 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         InitDomain();
 
         GameObject camera2 = GameObject.Find("Camera 2");
-        camera2.transform.SetParent(earth.SpatialObject.transform);
+        earth.SetAsParentOf(camera2);
         camera2.transform.localRotation = Quaternion.Euler(90.0f, 90.0f, 0.0f);
         camera2.transform.localPosition = new Vector3(0.0f, 10.0f, 0.0f);
         camera2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -46,14 +46,13 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         directionalLight1 = GameObject.Find("Light 1");
 
         Material sunMaterial = Resources.Load<Material>("Materials/SunMaterial");
-        sun.SpatialObject.GetComponent<MeshRenderer>().material = sunMaterial;
+        sun.Material = sunMaterial;
 
         Material earthMaterial = Resources.Load<Material>("Materials/EarthMaterial");
-        earth.SpatialObject.GetComponent<MeshRenderer>().material = earthMaterial;
+        earth.Material = earthMaterial;
 
         Material moonMaterial = Resources.Load<Material>("Materials/MoonMaterial");
-        moon.SpatialObject.GetComponent<MeshRenderer>().material = moonMaterial;
-
+        moon.Material = moonMaterial;
     }
 
     private void InitDomain()
@@ -104,28 +103,28 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         mercury.Name = "Mercury";
         mercury.Mass = mercuryMass;
         mercury.Radius = mercuryRadius * entityRadiusFactor;
-        mercury.PositionRelativeTo(sun.SpatialObject.transform, 
+        mercury.PositionRelativeTo(sun, 
                                   (new Vector3(mercurySunAphelionDistance, 0.0f, 0.0f) / 
                                    entityPositionFactor) * scalarFactor);
 
         venus.Name = "Venus";
         venus.Mass = venusMass;
         venus.Radius = venusRadius * entityRadiusFactor;
-        venus.PositionRelativeTo(sun.SpatialObject.transform, 
+        venus.PositionRelativeTo(sun, 
                                 (new Vector3(venusSunAphelionDistance, 0.0f, 0.0f) / 
                                  entityPositionFactor) * scalarFactor);
 
         earth.Name = "Earth";
         earth.Mass = earthMass;
         earth.Radius = earthRadius * entityRadiusFactor;
-        earth.PositionRelativeTo(sun.SpatialObject.transform, 
+        earth.PositionRelativeTo(sun, 
                                 (new Vector3(earthSunAphelionDistance, 0.0f, 0.0f) / 
                                  entityPositionFactor) * scalarFactor);
 
         moon.Name = "Moon";
         moon.Mass = moonMass;
         moon.Radius = moonRadius * entityRadiusFactor;
-        moon.PositionRelativeTo(earth.SpatialObject.transform, 
+        moon.PositionRelativeTo(earth, 
                                (new Vector3(moonEarthApogeeDistance, 0.0f, 0.0f) / 
                                 entityPositionFactor) * scalarFactor);
 
@@ -147,29 +146,23 @@ public class EllipticalOrbitSimulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera3.transform.LookAt(earth.SpatialObject.transform);
-        directionalLight1.transform.LookAt(earth.SpatialObject.transform);
+        earth.SetLookAtMe(camera3);
+        earth.SetLookAtMe(directionalLight1);
 
         if (enableTrail)
         {
-            mercury.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            venus.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
+            mercury.EnableTrail();
+            venus.EnableTrail();
+            earth.EnableTrail();
+            moon.EnableTrail();
         }
         else
         {
-            mercury.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            venus.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-
-            mercury.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            venus.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            earth.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            moon.SpatialObject.GetComponent<TrailRenderer>().Clear();
+            mercury.DisableTrail();
+            venus.DisableTrail();
+            earth.DisableTrail();
+            moon.DisableTrail();
         }
-
     }
 
     void FixedUpdate()
@@ -184,18 +177,15 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         {
             foreach (SpatialEntity bodyB in bodies)
             {
-                if (!bodyA.Equals(bodyB) && !(bodyA.SpatialObject.name == "Sun"))
+                if (!bodyA.Equals(bodyB) && !(bodyA.Name == "Sun"))
                 {
                     bodyA.ApplyGravityForceRelativeTo(bodyB);
 
-                    MoonEarthDistance = Vector3.Distance(moon.SpatialObject.transform.position, 
-                                                         earth.SpatialObject.transform.position);
-                    EarthSunDistance = Vector3.Distance(earth.SpatialObject.transform.position, 
-                                                        sun.SpatialObject.transform.position);
+                    MoonEarthDistance = moon.CalculateDistanceTo(earth);
+                    EarthSunDistance = earth.CalculateDistanceTo(sun);
                 }
             }
         }
-
     }
 
     public void SetEarthValues(Vector3 force, Vector3 acceleration, Vector3 velocity)
