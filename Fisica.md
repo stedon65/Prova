@@ -16,6 +16,7 @@ Questa legge afferma che la forza gravitazionale $F_G$ generata tra due corpi ne
 
 In Unity viene assegnata questa forza ai corpi rigidi e sarà poi compito del modulo di fisica calcolare l'accelerazione gravitazionale per ogni corpo come segue:
 
+
 ### $$F_G=G \dfrac{m_1m_2}{d^2}=m_1a_g$$
 
 
