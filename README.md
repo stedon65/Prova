@@ -9,7 +9,7 @@ Lo sviluppo orientato ai componenti si preoccupa di definire le interfacce a cui
 
 In Unity i componenti gestiti dal motore interno devono derivare da una classe base specifica chiamata **MonoBehaviour** e questo permette al motore di poter effettuare alcune _callback_ ridefinite in ogni componenete in alcuni momenti ben precisi. Naturalmente è possibile anche definire dei propri componenti come classi autonome che possono essere utilizzati tramite opportune interfacce come si vedrà nel codice della simulazione.
 
-Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate()** che permette di avere un _refresh rate_ della fisica costante disaccoppiato dal _frame rate_ grafico.
+Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate** che permette di avere un _refresh rate_ della fisica costante disaccoppiato dal _frame rate_ grafico.
 
 [Fisica](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Fisica.md)
 
