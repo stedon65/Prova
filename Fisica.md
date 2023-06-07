@@ -52,19 +52,3 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - Il Sole ha $v_i = 0$ e non risente della forza gravitazionale dei pianeti.
 - La Terra e la Luna hanno velocità iniziale $v_i$ rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
-
-
-![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
-
-
-
-
-
-
-
-
-
-
-
-
-
