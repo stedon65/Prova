@@ -167,7 +167,6 @@ public interface IStartingVelocity
     public void ApplyStartingVelocity(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB, float semimajorAxis, float G);
 }
 
-
 public class CircularVelocity : VelocityParameters, IStartingVelocity
 {
     public CircularVelocity()
@@ -184,7 +183,6 @@ public class CircularVelocity : VelocityParameters, IStartingVelocity
     }
 }
 
-
 public class EllipticalVelocity : VelocityParameters, IStartingVelocity
 {
     public EllipticalVelocity()
@@ -200,7 +198,6 @@ public class EllipticalVelocity : VelocityParameters, IStartingVelocity
         spatialEntityA.RigidBody.velocity += velocity;
     }
 }
-
 
 public abstract class VelocityParameters
 {
