@@ -4,8 +4,6 @@
 Per eseguire diversi tipi di simulazione ho creato una classe **SpatialEntity** che permetta di rappresentare, a livello di dominio, una generica entità dello spazio dotata di alcune proprietà fondamentali e che sia composta con una classe **GameObject** di Unity che rappresenta l'oggetto grafico 3D a sua volta composto con il componente necessario alla simulazione fisica ovvero la classe **Rigidbody**.
 
 ```cs
-using UnityEngine;
-
 public class SpatialEntity
 {
     private GameObject spatialObject = null;
@@ -148,7 +146,6 @@ public class SpatialEntity
 
         objectTransform.localScale = actualLocalScale;
     }
-
 }
 ```
 
@@ -164,10 +161,51 @@ Il metodo **ApplyGravityForceRelativeTo** permette al client dell'oggetto di agg
 
 Il metodo **ApplyStartingVelocityRelativeTo** permette al client dell'oggetto di aggiungere una velocità iniziale al corpo rigido **rigidBody** dell'oggetto grafico. Al suo interno viene chiamata la **ApplyStartingVelocity** su un oggetto iniettato nel costruttore sull'interfaccia **IStartingVelocity**. L'interfaccia permette di usare **strategie diverse** per calcolare la velocità iniziale. **Sebbene la stessa formula possa essere usata sia per la velocità orbitale circolare che ellittica (quando il semiasse maggiore e la distanza sono uguali) ho preferito usare due formule diverse di cui una semplificata**.
 
+```cs
+public interface IStartingVelocity
+{
+    public void ApplyStartingVelocity(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB, float semimajorAxis, float G);
+}
+
+
+public class CircularVelocity : VelocityParameters, IStartingVelocity
+{
+    public CircularVelocity()
+    {
+    }
+
+    public void ApplyStartingVelocity(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB, float semimajorAxis, float G)
+    {
+        SetVelocityParameters(spatialEntityA, spatialEntityB);
+
+        Vector3 velocity = spatialEntityA.SpatialObject.transform.right * Mathf.Sqrt((G * mass) / semimajorAxis);
+
+        spatialEntityA.RigidBody.velocity += velocity;
+    }
+}
+
+
+public class EllipticalVelocity : VelocityParameters, IStartingVelocity
+{
+    public EllipticalVelocity()
+    {
+    }
+
+    public void ApplyStartingVelocity(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB, float semimajorAxis, float G)
+    {
+        SetVelocityParameters(spatialEntityA, spatialEntityB);
+
+        Vector3 velocity = spatialEntityA.SpatialObject.transform.right * Mathf.Sqrt((G * mass) * ((2 / distance) - (1 / semimajorAxis)));
+
+        spatialEntityA.RigidBody.velocity += velocity;
+    }
+}
 
 
 
 
+
+```
 
 
 
