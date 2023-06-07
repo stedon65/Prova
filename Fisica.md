@@ -53,3 +53,5 @@ In questa simulazione, quindi, ipotizzo quanto segue:
 - La Terra e la Luna hanno velocità iniziale $v_i$ rispettivamente all'Afelio e all'Apogeo considerando l'Apogeo lunare in coincidenza dell'Afelio terrestre.
 
 [![Simulazione con orbita circolare](https://dl.dropboxusercontent.com/s/u7zr032aijgpe6j/diagram2.png?dl=1)](https://dl.dropboxusercontent.com/s/tbsu4gn1d56g75q/20230519131325.mp4?dl=0)
+
+![Prova](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
