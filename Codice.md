@@ -167,6 +167,24 @@ public interface IStartingVelocity
     public void ApplyStartingVelocity(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB, float semimajorAxis, float G);
 }
 
+public abstract class VelocityParameters
+{
+    protected float mass = 0.0f;
+    protected float distance = 0.0f;
+
+    public VelocityParameters()
+    {
+    }
+
+    protected virtual void SetVelocityParameters(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB)
+    {
+        mass = spatialEntityB.RigidBody.mass;
+        distance = Vector3.Distance(spatialEntityA.SpatialObject.transform.position, spatialEntityB.SpatialObject.transform.position);
+
+        spatialEntityA.SpatialObject.transform.LookAt(spatialEntityB.SpatialObject.transform);
+    }
+}
+
 public class CircularVelocity : VelocityParameters, IStartingVelocity
 {
     public CircularVelocity()
@@ -196,24 +214,6 @@ public class EllipticalVelocity : VelocityParameters, IStartingVelocity
         Vector3 velocity = spatialEntityA.SpatialObject.transform.right * Mathf.Sqrt((G * mass) * ((2 / distance) - (1 / semimajorAxis)));
 
         spatialEntityA.RigidBody.velocity += velocity;
-    }
-}
-
-public abstract class VelocityParameters
-{
-    protected float mass = 0.0f;
-    protected float distance = 0.0f;
-
-    public VelocityParameters()
-    {
-    }
-
-    protected virtual void SetVelocityParameters(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB)
-    {
-        mass = spatialEntityB.RigidBody.mass;
-        distance = Vector3.Distance(spatialEntityA.SpatialObject.transform.position, spatialEntityB.SpatialObject.transform.position);
-
-        spatialEntityA.SpatialObject.transform.LookAt(spatialEntityB.SpatialObject.transform);
     }
 }
 ```
