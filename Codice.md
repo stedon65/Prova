@@ -158,6 +158,8 @@ La classe **Rigidbody** consente a Unity di controllare direttamente il moto del
 
 Successivamente viene chiamato il metodo **AddTrail** che aggiunge il componente **TrailRenderer** per disegnare la traccia durante il moto orbitale dei pianeti.
 
+Il metodo **PositionRelativeTo** permette al client dell'oggetto di posizionare l'oggetto grafico **spatialObject** rispetto ad un altro oggetto di riferimento _parent_ tramite il suo componente **Transform objectTransform**. L'oggetto **spatialObject**, quindi, avrà il proprio sistema di riferimento posizionato in coordinate locali rispetto al sistema di riferimento dell'oggetto **objectTranform**. In questo modo, ad esempio, sarà facile posizionare la Luna conoscendo la distanza dalla Terra tramite un vettore **localPosition**.
+
 
 
 
