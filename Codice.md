@@ -220,7 +220,7 @@ public abstract class VelocityParameters
 
 Infine, ho sviluppato due classi client per due simulazioni diverse: **CircularOrbitSimulation** e **EllipticalOrbitSimulation**.
 
-Nella seconda, che illustro qui brevemente, ho aggiunto Mercurio e Venere oltre a Terra, Luna e Sole. Per i dettagli consiglio di guardare il codice allegato.
+Nella seconda, che illustro qui brevemente, ho aggiunto Mercurio e Venere oltre a Terra, Luna e Sole.
 
 ```cs
 public class EllipticalOrbitSimulation : MonoBehaviour
