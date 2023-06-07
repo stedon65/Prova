@@ -55,19 +55,32 @@ public class SpatialEntity
         trailRenderer.colorGradient = gradient;
     }
 
-    public GameObject SpatialObject
+    private Vector3 LocalScale
     {
         get
         {
-            return spatialObject;
+            return spatialObject.transform.localScale;
+        }
+        set
+        {
+            spatialObject.transform.localScale = value;
         }
     }
 
-    public Rigidbody RigidBody
+    private Transform Transform
     {
         get
         {
-            return rigidBody;
+            // is readonly
+            return spatialObject.transform;
+        }
+    }
+
+    public Vector3 VectorRight
+    {
+        get
+        {
+            return spatialObject.transform.right;
         }
     }
 
@@ -95,16 +108,71 @@ public class SpatialEntity
         }
     }
 
+    public Vector3 Velocity
+    {
+        get
+        {
+            return spatialObject.GetComponent<Rigidbody>().velocity;
+        }
+        set
+        {
+            spatialObject.GetComponent<Rigidbody>().velocity = value;
+        }
+    }
+
     public Vector3 Radius
     {
         get
         {
-            return spatialObject.transform.localScale;
+            return spatialObject.transform.localScale / 2;
         }
         set
         {
             spatialObject.transform.localScale = value * 2;
         }
+    }
+
+    public Material Material
+    {
+        get
+        {
+            return spatialObject.GetComponent<MeshRenderer>().material;
+        }
+        set
+        {
+            spatialObject.GetComponent<MeshRenderer>().material = value;
+        }
+    }
+
+    public void SetLookAtMe(SpatialEntity theEntity)
+    {
+        theEntity.Transform.LookAt(spatialObject.transform);
+    }
+
+    public void SetLookAtMe(GameObject theObject)
+    {
+        theObject.transform.LookAt(spatialObject.transform);
+    }
+
+    public void EnableTrail()
+    {
+        spatialObject.GetComponent<TrailRenderer>().enabled = true;
+    }
+
+    public void DisableTrail()
+    {
+        spatialObject.GetComponent<TrailRenderer>().enabled = false;
+        spatialObject.GetComponent<TrailRenderer>().Clear();
+    }
+
+    public void SetAsParentOf(GameObject objectChild)
+    {
+        objectChild.transform.SetParent(spatialObject.transform);
+    }
+
+    public float CalculateDistanceTo(SpatialEntity entity)
+    {
+        return Vector3.Distance(spatialObject.transform.position, entity.Transform.position);
     }
 
     public void ApplyStartingVelocityRelativeTo(SpatialEntity orbited, float semimajorAxis)
@@ -134,17 +202,17 @@ public class SpatialEntity
         }
     }
 
-    public void PositionRelativeTo(Transform objectTransform, Vector3 localPosition)
-    {
-        Vector3 actualLocalScale = objectTransform.localScale;
+    public void PositionRelativeTo(SpatialEntity entity, Vector3 localPosition)
+    {      
+        Vector3 actualLocalScale = entity.LocalScale;
         Vector3 unitScale = new Vector3(1.0f, 1.0f, 1.0f);
-        objectTransform.localScale = unitScale;
+        entity.LocalScale = unitScale;
 
-        spatialObject.transform.SetParent(objectTransform);
+        spatialObject.transform.SetParent(entity.Transform);
         spatialObject.transform.localPosition = localPosition;
         spatialObject.transform.SetParent(null);
 
-        objectTransform.localScale = actualLocalScale;
+        entity.LocalScale = actualLocalScale;
     }
 }
 ```
@@ -178,10 +246,10 @@ public abstract class VelocityParameters
 
     protected virtual void SetVelocityParameters(SpatialEntity spatialEntityA, SpatialEntity spatialEntityB)
     {
-        mass = spatialEntityB.RigidBody.mass;
-        distance = Vector3.Distance(spatialEntityA.SpatialObject.transform.position, spatialEntityB.SpatialObject.transform.position);
+        mass = spatialEntityB.Mass;
+        distance = spatialEntityA.CalculateDistanceTo(spatialEntityB);
 
-        spatialEntityA.SpatialObject.transform.LookAt(spatialEntityB.SpatialObject.transform);
+        spatialEntityB.SetLookAtMe(spatialEntityA);
     }
 }
 
@@ -195,9 +263,9 @@ public class CircularVelocity : VelocityParameters, IStartingVelocity
     {
         SetVelocityParameters(spatialEntityA, spatialEntityB);
 
-        Vector3 velocity = spatialEntityA.SpatialObject.transform.right * Mathf.Sqrt((G * mass) / semimajorAxis);
+        Vector3 velocity = spatialEntityA.VectorRight * Mathf.Sqrt((G * mass) / semimajorAxis);
 
-        spatialEntityA.RigidBody.velocity += velocity;
+        spatialEntityA.Velocity += velocity;
     }
 }
 
@@ -211,9 +279,9 @@ public class EllipticalVelocity : VelocityParameters, IStartingVelocity
     {
         SetVelocityParameters(spatialEntityA, spatialEntityB);
 
-        Vector3 velocity = spatialEntityA.SpatialObject.transform.right * Mathf.Sqrt((G * mass) * ((2 / distance) - (1 / semimajorAxis)));
+        Vector3 velocity = spatialEntityA.VectorRight * Mathf.Sqrt((G * mass) * ((2 / distance) - (1 / semimajorAxis)));
 
-        spatialEntityA.RigidBody.velocity += velocity;
+        spatialEntityA.Velocity += velocity;
     }
 }
 ```
@@ -259,7 +327,7 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         InitDomain();
 
         GameObject camera2 = GameObject.Find("Camera 2");
-        camera2.transform.SetParent(earth.SpatialObject.transform);
+        earth.SetAsParentOf(camera2);
         camera2.transform.localRotation = Quaternion.Euler(90.0f, 90.0f, 0.0f);
         camera2.transform.localPosition = new Vector3(0.0f, 10.0f, 0.0f);
         camera2.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -268,13 +336,13 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         directionalLight1 = GameObject.Find("Light 1");
 
         Material sunMaterial = Resources.Load<Material>("Materials/SunMaterial");
-        sun.SpatialObject.GetComponent<MeshRenderer>().material = sunMaterial;
+        sun.Material = sunMaterial;
 
         Material earthMaterial = Resources.Load<Material>("Materials/EarthMaterial");
-        earth.SpatialObject.GetComponent<MeshRenderer>().material = earthMaterial;
+        earth.Material = earthMaterial;
 
         Material moonMaterial = Resources.Load<Material>("Materials/MoonMaterial");
-        moon.SpatialObject.GetComponent<MeshRenderer>().material = moonMaterial;
+        moon.Material = moonMaterial;
     }
 
     private void InitDomain()
@@ -325,28 +393,28 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         mercury.Name = "Mercury";
         mercury.Mass = mercuryMass;
         mercury.Radius = mercuryRadius * entityRadiusFactor;
-        mercury.PositionRelativeTo(sun.SpatialObject.transform, 
+        mercury.PositionRelativeTo(sun, 
                                   (new Vector3(mercurySunAphelionDistance, 0.0f, 0.0f) / 
                                    entityPositionFactor) * scalarFactor);
 
         venus.Name = "Venus";
         venus.Mass = venusMass;
         venus.Radius = venusRadius * entityRadiusFactor;
-        venus.PositionRelativeTo(sun.SpatialObject.transform, 
+        venus.PositionRelativeTo(sun, 
                                 (new Vector3(venusSunAphelionDistance, 0.0f, 0.0f) / 
                                  entityPositionFactor) * scalarFactor);
 
         earth.Name = "Earth";
         earth.Mass = earthMass;
         earth.Radius = earthRadius * entityRadiusFactor;
-        earth.PositionRelativeTo(sun.SpatialObject.transform, 
+        earth.PositionRelativeTo(sun, 
                                 (new Vector3(earthSunAphelionDistance, 0.0f, 0.0f) / 
                                  entityPositionFactor) * scalarFactor);
 
         moon.Name = "Moon";
         moon.Mass = moonMass;
         moon.Radius = moonRadius * entityRadiusFactor;
-        moon.PositionRelativeTo(earth.SpatialObject.transform, 
+        moon.PositionRelativeTo(earth, 
                                (new Vector3(moonEarthApogeeDistance, 0.0f, 0.0f) / 
                                 entityPositionFactor) * scalarFactor);
 
@@ -366,31 +434,25 @@ public class EllipticalOrbitSimulation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camera3.transform.LookAt(earth.SpatialObject.transform);
-        directionalLight1.transform.LookAt(earth.SpatialObject.transform);
+        earth.SetLookAtMe(camera3);
+        earth.SetLookAtMe(directionalLight1);
 
         if (enableTrail)
         {
-            mercury.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            venus.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = true;
+            mercury.EnableTrail();
+            venus.EnableTrail();
+            earth.EnableTrail();
+            moon.EnableTrail();
         }
         else
         {
-            mercury.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            venus.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            earth.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-            moon.SpatialObject.GetComponent<TrailRenderer>().enabled = false;
-
-            mercury.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            venus.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            earth.SpatialObject.GetComponent<TrailRenderer>().Clear();
-            moon.SpatialObject.GetComponent<TrailRenderer>().Clear();
+            mercury.DisableTrail();
+            venus.DisableTrail();
+            earth.DisableTrail();
+            moon.DisableTrail();
         }
     }
 
-    // FixedUpdate is called every 0.02s by physics engine
     void FixedUpdate()
     {
         EarthForce = Vector3.zero;
@@ -403,14 +465,12 @@ public class EllipticalOrbitSimulation : MonoBehaviour
         {
             foreach (SpatialEntity bodyB in bodies)
             {
-                if (!bodyA.Equals(bodyB) && !(bodyA.SpatialObject.name == "Sun"))
+                if (!bodyA.Equals(bodyB) && !(bodyA.Name == "Sun"))
                 {
                     bodyA.ApplyGravityForceRelativeTo(bodyB);
 
-                    MoonEarthDistance = Vector3.Distance(moon.SpatialObject.transform.position, 
-                                                         earth.SpatialObject.transform.position);
-                    EarthSunDistance = Vector3.Distance(earth.SpatialObject.transform.position, 
-                                                        sun.SpatialObject.transform.position);
+                    MoonEarthDistance = moon.CalculateDistanceTo(earth);
+                    EarthSunDistance = earth.CalculateDistanceTo(sun);
                 }
             }
         }
