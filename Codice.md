@@ -434,4 +434,4 @@ public class EllipticalOrbitSimulation : MonoBehaviour
 
 Nella callback **Start** di Unity viene chiamato il metodo **InitDomain** per l'nizializzazione degli oggetti. Qui si crea l'oggetto di tipo **EllipticalVelocity** per la velocità iniziale e gli oggetti di tipo **SpatialEntity** per i Pianeti ed il Sole impostando i parametri numerici per la simulazione.
 
-Nella callback **FixedUpdate** chiamata da Unity ogni **0.02s (50 volte al secondo)** viene chiamata la **ApplyGravityForceRelativeTo** per ogni coppia di corpi celesti e quindi calcolata la forza gravitazionale di un oggetto e applicata al suo Rigidbody interno gestito dal motore di fisica di Unity.
+Nella callback **FixedUpdate** chiamata da Unity ogni **50 volte al secondo** viene chiamata la **ApplyGravityForceRelativeTo** per ogni coppia di corpi celesti e quindi calcolata la forza gravitazionale di un oggetto e applicata al suo Rigidbody interno gestito dal motore di fisica di Unity.
