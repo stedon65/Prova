@@ -1,10 +1,9 @@
 # Moto orbitale in Unity
 
-[![Simulazione con orbita circolare](https://dl.dropboxusercontent.com/s/u7zr032aijgpe6j/diagram2.png?dl=1)](https://dl.dropboxusercontent.com/s/tbsu4gn1d56g75q/20230519131325.mp4?dl=0)
+### Fisica
 
 ![Prova](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
 
-### Fisica
 Questa semplice simulazione del moto orbitale dei pianeti viene eseguita usando solo il motore del modulo di fisica di Unity. Non viene eseguito nessun calcolo della traiettoria orbitale da programma ma la traiettoria è il risultato dell'applicazione di forze e velocità ai corpi rigidi. Si considera solo il moto di rivoluzione e non quello di rotazione.
 
 Vengono usate solo due equazioni della fisica classica.
