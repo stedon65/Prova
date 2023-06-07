@@ -20,6 +20,7 @@ In Unity viene assegnata questa forza ai corpi rigidi e sarà poi compito del mo
 ### $$F_G=G \dfrac{m_1m_2}{d^2}=m_1a_g$$
 
 
+
 ### $$a_g=G \dfrac{m_2}{d^2}= \dfrac{F_G}{m_1}$$
 
 
