@@ -12,13 +12,6 @@ In Unity i componenti gestiti dal motore interno devono derivare da una classe b
 
 Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate()** che permette di avere un _refresh rate_ della fisica disaccoppiato dal _frame rate_ grafico.
 
-
-
-![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
-
-[![Simulazione con orbita circolare](https://dl.dropboxusercontent.com/s/u7zr032aijgpe6j/diagram2.png?dl=1)](https://dl.dropboxusercontent.com/s/tbsu4gn1d56g75q/20230519131325.mp4?dl=0)
-
-
 [Fisica](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Fisica.md)
 
 
