@@ -562,8 +562,4 @@ Nella callback **Start** di Unity viene chiamato il metodo **InitDomain** per l'
 
 Nella callback **FixedUpdate** chiamata da Unity ogni **50 volte al secondo** viene chiamata la **ApplyGravityForceRelativeTo** per ogni coppia di corpi celesti e quindi calcolata la forza gravitazionale di un oggetto e applicata al suo Rigidbody interno gestito dal motore di fisica di Unity.
 
-[Video Simulazioni](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Simulazioni.md)
-
-
-![](https://dl.dropboxusercontent.com/s/bu9hofko5hswmkk/Circular01.mp4?dl=0)
-
+[Video](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Video.md)
