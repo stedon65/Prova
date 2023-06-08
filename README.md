@@ -11,12 +11,6 @@ In Unity i componenti gestiti dal motore interno devono derivare da una classe b
 
 Tra i componenti nativi che interessano maggiormenete questa simulazione sicuramente è importante citare il **Rigidbody** direttamente coinvolto dal modulo di fisica interno e tra le callback **FixedUpdate** che permette di avere un _refresh rate_ della fisica costante disaccoppiato dal _frame rate_ grafico.
 
-[Fisica](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Fisica.md)
-
-[Codice](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Codice.md)
-
-[Simulazioni](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Simulazioni.md)
-
 ### Fisica
 
 ![](https://dl.dropboxusercontent.com/s/ziekoxun8flpd8o/diagram3.png?dl=1)
@@ -567,3 +561,5 @@ public class EllipticalOrbitSimulation : MonoBehaviour
 Nella callback **Start** di Unity viene chiamato il metodo **InitDomain** per l'nizializzazione degli oggetti. Qui si crea l'oggetto di tipo **EllipticalVelocity** per la velocità iniziale e gli oggetti di tipo **SpatialEntity** per i Pianeti ed il Sole impostando i parametri numerici per la simulazione.
 
 Nella callback **FixedUpdate** chiamata da Unity ogni **50 volte al secondo** viene chiamata la **ApplyGravityForceRelativeTo** per ogni coppia di corpi celesti e quindi calcolata la forza gravitazionale di un oggetto e applicata al suo Rigidbody interno gestito dal motore di fisica di Unity.
+
+[Video Simulazioni](https://github.com/stedon65/moto-orbitale-in-unity/blob/main/Simulazioni.md)
